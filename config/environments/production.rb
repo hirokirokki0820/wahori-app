@@ -70,12 +70,12 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'http://wahori-app.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'https://wahori-app.herokuapp.com/' }
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
     :address => 'smtp.sendgrid.net',
     :port => 587,
-    :domain => 'wahori-app.heroku.com',
+    :domain => 'heroku.com',
     :user_name => 'apikey',
     :password => ENV['SENDGRID_APIKEY'],
     :authentication => :plain,
