@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['SENDER_ADDRESS']
-  default to: ENV['SENDER_ADDRESS']
+  default from: "info@kobacchi.com"
+  default to: "info@kobacchi.com"
   layout "mailer"
 end
