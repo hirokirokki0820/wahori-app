@@ -42,15 +42,27 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
+  # GMAIL
+#   config.action_mailer.smtp_settings = {
+#   :enable_starttls_auto => true,
+#   :address => "smtp.gmail.com",
+#   :port => 587,
+#   :domain => 'smtp.gmail.com',
+#   :user_name => ENV['GMAIL_ADDRESS'],
+#   :password => ENV['GMAIL_PASSWORD'],
+#   :authentication => 'login'
+# }
+
+  # SendGrid
   config.action_mailer.smtp_settings = {
-  :enable_starttls_auto => true,
-  :address => "smtp.gmail.com",
-  :port => 587,
-  :domain => 'smtp.gmail.com',
-  :user_name => ENV['GMAIL_ADDRESS'],
-  :password => ENV['GMAIL_PASSWORD'],
-  :authentication => 'login'
-}
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :domain => 'localhost',
+    :user_name => 'apikey',
+    :password => ENV['SENDGRID_APIKEY'],
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
